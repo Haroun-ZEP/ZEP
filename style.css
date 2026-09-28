@@ -1,225 +1,390 @@
 /* ================================
    Z.E.P — Zero Evidence Passed
-   Main Website Style
-================================ */
+   Main Website Styles
+   ================================ */
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    padding: 0;
-
-    background:
-        radial-gradient(circle at top, #063b58 0%, #021923 45%, #010b11 100%);
-
-    color: #e8fbff;
     font-family: Arial, Helvetica, sans-serif;
-
+    background:
+        radial-gradient(circle at top, #0b3654 0%, #061522 45%, #02090f 100%);
+    color: white;
+    text-align: center;
     min-height: 100vh;
 }
 
 
 /* ================================
    HEADER
-================================ */
+   ================================ */
 
-.site-header {
-    text-align: center;
-    padding: 60px 20px 35px;
+header {
+    padding: 80px 20px;
+    background:
+        linear-gradient(135deg, #063b63, #087ea4);
+    border-bottom: 3px solid #19cfff;
+    box-shadow: 0 0 35px rgba(25, 207, 255, 0.25);
+}
 
-    border-bottom: 1px solid #00cfff;
+header h1 {
+    font-size: clamp(45px, 8vw, 70px);
+    margin: 0;
+    letter-spacing: 6px;
+    text-shadow:
+        0 0 10px #19cfff,
+        0 0 25px rgba(25, 207, 255, 0.6);
+}
 
-    background: rgba(0, 15, 25, 0.75);
+.subtitle {
+    font-size: 22px;
+    color: #b9f5ff;
+    margin: 15px 0 5px;
+}
+
+header p:last-child {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+
+/* ================================
+   MAIN CONTENT
+   ================================ */
+
+section {
+    max-width: 950px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+
+/* ================================
+   CARDS
+   ================================ */
+
+.card {
+    background: rgba(11, 41, 64, 0.9);
+    border: 1px solid #19cfff;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 25px 0;
 
     box-shadow:
-        0 5px 25px rgba(0, 200, 255, 0.15);
+        0 0 12px rgba(25, 207, 255, 0.08),
+        inset 0 0 20px rgba(25, 207, 255, 0.03);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
-.site-header h1 {
-    margin: 0;
+.card:hover {
+    transform: translateY(-5px);
 
-    font-size: 64px;
-    letter-spacing: 8px;
+    border-color: #7eeaff;
 
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 10px #00cfff,
-        0 0 25px rgba(0, 207, 255, 0.5);
+    box-shadow:
+        0 0 20px rgba(25, 207, 255, 0.3),
+        0 0 45px rgba(25, 207, 255, 0.08);
 }
 
-.site-header h2 {
-    margin: 25px 0 5px;
-
-    font-size: 36px;
-    color: #ffffff;
+.card h2 {
+    color: #7eeaff;
+    font-size: 28px;
+    margin-top: 0;
 }
 
-.site-header p {
-    margin: 8px 0;
-
-    color: #bcefff;
+.card p {
+    color: #dddddd;
+    line-height: 1.7;
     font-size: 17px;
 }
 
 
 /* ================================
-   CHARACTERS
-================================ */
+   ARC CARDS
+   ================================ */
 
-.characters-container {
-    width: 90%;
-    max-width: 1100px;
-
-    margin: 40px auto;
-}
-
-
-/* Character card */
-
-.character-card {
-    position: relative;
+.arc-card {
+    border: 2px solid #19cfff;
 
     background:
         linear-gradient(
             145deg,
-            rgba(4, 44, 65, 0.95),
-            rgba(2, 19, 30, 0.95)
+            rgba(8, 126, 164, 0.25),
+            rgba(11, 41, 64, 0.95)
         );
 
-    border: 1px solid #00cfff;
-    border-radius: 14px;
-
-    padding: 25px;
-    margin: 20px 0;
-
     box-shadow:
-        0 0 12px rgba(0, 207, 255, 0.18);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        0 0 20px rgba(25, 207, 255, 0.12);
 }
 
-
-/* Hover effect */
-
-.character-card:hover {
-    transform: translateY(-4px);
-
-    border-color: #65e9ff;
-
-    box-shadow:
-        0 0 20px rgba(0, 207, 255, 0.35);
-}
-
-
-/* Character names */
-
-.character-card h2 {
-    margin-top: 0;
-    margin-bottom: 12px;
-
-    color: #00d9ff;
-
-    font-size: 27px;
-
-    text-shadow:
-        0 0 8px rgba(0, 207, 255, 0.35);
-}
-
-
-/* Character descriptions */
-
-.character-card p {
-    margin: 8px 0;
-
-    color: #d8f7ff;
-
-    line-height: 1.6;
-
-    font-size: 16px;
-}
-
-.character-card strong {
-    color: #ffffff;
+.arc-card h2 {
+    color: #19cfff;
 }
 
 
 /* ================================
    BUTTONS
-================================ */
-
-.navigation {
-    text-align: center;
-
-    margin: 45px 0 60px;
-}
+   ================================ */
 
 .button {
     display: inline-block;
 
-    padding: 12px 22px;
-    margin: 8px;
+    margin-top: 18px;
+    padding: 13px 25px;
 
-    color: #ffffff;
+    background: #087ea4;
+    border: 2px solid #19cfff;
+    border-radius: 10px;
 
-    background: #063b58;
-
-    border: 1px solid #00cfff;
-    border-radius: 8px;
-
+    color: white;
     text-decoration: none;
-
     font-weight: bold;
 
     transition:
         background 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .button:hover {
-    background: #075879;
-
-    box-shadow:
-        0 0 15px rgba(0, 207, 255, 0.35);
+    background: #19cfff;
+    color: #061522;
 
     transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(25, 207, 255, 0.6);
+}
+
+
+/* ================================
+   PAGE TITLES
+   ================================ */
+
+.page-title {
+    font-size: 48px;
+    color: #7eeaff;
+
+    text-shadow:
+        0 0 15px rgba(25, 207, 255, 0.5);
+}
+
+
+/* ================================
+   LINKS
+   ================================ */
+
+a {
+    transition: 0.2s ease;
+}
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+footer {
+    padding: 35px 20px;
+    margin-top: 30px;
+
+    color: #777;
+
+    border-top: 1px solid #12384d;
+
+    background: rgba(2, 9, 15, 0.8);
+}
+
+
+/* ==================================================
+   CHARACTER PAGE — NEW STYLES
+   ================================================== */
+
+/*
+   These styles only affect elements that use
+   character-page-specific classes.
+
+   The original Z.E.P website styling above remains intact.
+*/
+
+.characters-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 55px 20px;
+}
+
+
+/* CHARACTER GRID */
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+
+/* CHARACTER CARDS */
+
+.character-card {
+    background: rgba(11, 41, 64, 0.9);
+
+    border: 1px solid #19cfff;
+    border-radius: 16px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 12px rgba(25, 207, 255, 0.08),
+        inset 0 0 20px rgba(25, 207, 255, 0.03);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #7eeaff;
+
+    box-shadow:
+        0 0 20px rgba(25, 207, 255, 0.3),
+        0 0 45px rgba(25, 207, 255, 0.08);
+}
+
+.character-card h2 {
+    margin-top: 0;
+
+    color: #7eeaff;
+
+    font-size: 28px;
+
+    text-shadow:
+        0 0 8px rgba(25, 207, 255, 0.3);
+}
+
+.character-card p {
+    color: #dddddd;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    margin: 10px 0;
+}
+
+
+/* CHARACTER ROLE */
+
+.character-role {
+    color: #19cfff !important;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* CHARACTER DESCRIPTION */
+
+.character-description {
+    color: #dddddd;
+}
+
+
+/* CHARACTER NAVIGATION */
+
+.navigation {
+    margin-top: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
 }
 
 
 /* ================================
    MOBILE
-================================ */
+   ================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .site-header {
-        padding: 40px 15px 25px;
-    }
-
-    .site-header h1 {
-        font-size: 45px;
-        letter-spacing: 5px;
-    }
-
-    .site-header h2 {
-        font-size: 28px;
-    }
-
-    .characters-container {
-        width: 94%;
+    .character-grid {
+        grid-template-columns: 1fr;
     }
 
     .character-card {
-        padding: 20px;
+        padding: 25px;
     }
 
-    .character-card h2 {
+    .characters-container {
+        padding: 35px 15px;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation .button {
+        width: 80%;
+        max-width: 280px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 60px 15px;
+    }
+
+    header h1 {
+        letter-spacing: 3px;
+    }
+
+    section {
+        padding: 35px 15px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .card h2 {
         font-size: 24px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .button {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    .page-title {
+        font-size: 38px;
     }
 }
